@@ -5,7 +5,11 @@ import Antd from 'ant-design-vue';
 import 'ant-design-vue/dist/antd.css';
 import './themecss/variable.css'
 import './assets/iconfont/iconfont.css'
+import VueAwesomeSwiper from 'vue-awesome-swiper'
 
+// require styles
+import 'swiper/dist/css/swiper.css'
+Vue.use(VueAwesomeSwiper)
 import router from './router/index'
 Vue.config.productionTip = false
 Vue.use(VueRouter)

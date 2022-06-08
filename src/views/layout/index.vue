@@ -1,9 +1,9 @@
 <template>
   <a-layout>
       <a-layout-header>
-        <span>音乐邦</span>
-        <a-menu v-model="activeKey" mode="horizontal">
-          <a-menu-item key="home">首页</a-menu-item>
+        <img src="../../assets/images/logo.png" alt="">
+        <a-menu v-model="activeKey" mode="horizontal" @click="handleClick">
+          <a-menu-item key="/home">首页</a-menu-item>
           <a-menu-item key="app">全部曲库</a-menu-item>
         </a-menu>
         <div class="search">
@@ -35,7 +35,7 @@
               </a-menu-item>
             </a-menu>
           </a-dropdown>
-          <img src="" alt="">
+          <img src="../../assets/images/user.png" alt="">
         </div>
       </a-layout-header>
       <a-layout-content>
@@ -44,7 +44,7 @@
       <a-layout-footer>
         <div class="footer"></div>
         <div>
-          
+
         </div>
       </a-layout-footer>
     </a-layout>
@@ -53,24 +53,34 @@
 export default {
   data() {
     return {
-      activeKey: ["home"],
+      activeKey: ["/home"],
     };
   },
   methods: {
     handleJump () {
       this.$router.push('/userinfo')
+    },
+    handleClick({ key }){
+      console.log(key)
+      this.$router.push(key)
     }
   }
 };
 </script>
 <style lang="less" scoped>
+.ant-layout{
+  background: #fff;
+}
 .ant-layout-header{
-  padding: 0 300px;
+  width: var(--center-width);
+  margin: 0 auto;
   background: #fff;
   display: flex;
+  align-items: center;
   color: var(--secondary-color);
-  >span{
+  >img{
     margin-right: 20px;
+    height: 30px;
   }
   .ant-menu{
     line-height: 64px;

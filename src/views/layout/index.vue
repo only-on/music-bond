@@ -4,7 +4,7 @@
         <img src="../../assets/images/logo.png" alt="">
         <a-menu v-model="activeKey" mode="horizontal" @click="handleClick">
           <a-menu-item key="/home">首页</a-menu-item>
-          <a-menu-item key="app">全部曲库</a-menu-item>
+          <a-menu-item key="/all">全部曲库</a-menu-item>
         </a-menu>
         <div class="search">
           <a-input placeholder="新裤子乐队" />
@@ -78,6 +78,9 @@ export default {
   display: flex;
   align-items: center;
   color: var(--secondary-color);
+  .ant-menu-horizontal{
+    border-bottom: 0;
+  }
   >img{
     margin-right: 20px;
     height: 30px;

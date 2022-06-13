@@ -5,10 +5,10 @@
         slot="prevArrow"
         style="left: 10px;zIndex: 1"
       >
-        <i class="iconfont icon-yonghu" />
+        <i class="iconfont icon-the_previous_step" />
       </div>
       <div slot="nextArrow" style="right: 10px">
-        <i class="iconfont icon-yonghu" />
+        <i class="iconfont icon-the_next_step" />
       </div>
       <img v-for="(item,index) in bannerList" :key="index" :src="item" alt="">
     </a-carousel>
@@ -142,7 +142,7 @@
           <span>进入直播间</span>
           <div class="all">
             <span>全部</span>
-            <span>></span>
+            <span class="iconfont icon-next"></span>
           </div>
         </div>
       </div>
@@ -304,8 +304,12 @@ export default {
          }
        }
        .slick-arrow{
+        &.slick-next{
+          right: 25px !important;
+        }
          i {
-           color: yellow;
+          font-size: 34px;
+          color: #fff;
          }
        }
     }
@@ -333,13 +337,34 @@ export default {
         background: url(~@/assets/images/home/title6.png) no-repeat;
       }
     }
-    .slider-box1, .slider-box2{
+    .slider-box1{
       position: relative;
         .swiper-button-prev{
           left: -100px;
+          background-image: url(~@/assets/images/home/prev1.png);
+          background-size: 44px 44px;
         }
         .swiper-button-next{
           right: -100px;
+          background-image: url(~@/assets/images/home/next1.png);
+          background-size: 44px 44px;
+        }
+      }
+      .slider-box2{
+        position: relative;
+        .swiper-button-prev{
+          left: -100px;
+          width: 25px;
+          height: 26px;
+          background-image: url(~@/assets/images/home/prev2.png);
+          background-size: 100% 100%;
+        }
+        .swiper-button-next{
+          right: -100px; 
+          width: 25px;
+          height: 26px;
+          background-image: url(~@/assets/images/home/next2.png);
+          background-size: 100% 100%;
         }
       }
       .slider-box1 .swiper-container{
@@ -514,10 +539,20 @@ export default {
         .slider-box3{
           position: relative;
           .swiper-button-prev{
-            top: 110%;
+            z-index: 99;
+            top: 114%;
+            width: 25px;
+            height: 26px;
+            background-image: url(~@/assets/images/home/prev2.png);
+            background-size: 100% 100%;
           }
           .swiper-button-next{
-            top: 110%;
+            z-index: 99;
+            top: 114%;
+            width: 25px;
+            height: 26px;
+            background-image: url(~@/assets/images/home/next2.png);
+            background-size: 100% 100%;
           }
           .swiper-container{
             height: 260px;
